@@ -10,6 +10,6 @@ public class HomeController {
     @GetMapping("/")
     @ResponseBody
     public String home() {
-        return "Welcome to Mini Survey Monkey!";
+        return "Welcome to Mini Survey Monkey! Deployed with Azure Continuous Deployment.";
     }
 }
