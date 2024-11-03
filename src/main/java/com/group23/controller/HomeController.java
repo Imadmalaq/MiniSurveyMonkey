@@ -2,14 +2,21 @@ package com.group23.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
+/**
+ * Controller for handling home page requests.
+ */
 @Controller
 public class HomeController {
 
+    /**
+     * Displays the home page of the application.
+     *
+     * @return the view name to render
+     */
     @GetMapping("/")
-    @ResponseBody
     public String home() {
-        return "Welcome to Mini Survey Monkey! Deployed with Azure Continuous Deployment.";
+        // Method implementation goes here
+        return "home/index";
     }
 }
