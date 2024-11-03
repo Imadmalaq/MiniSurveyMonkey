@@ -5,5 +5,20 @@ package com.group23.model;
  */
 public abstract class Question {
 
-    // Fields and methods to be added later.
+    /**
+     * Unique identifier for the question.
+     */
+    private Long id;
+
+    /**
+     * The question text.
+     */
+    private String text;
+
+    /**
+     * The survey this question belongs to.
+     */
+    private Survey survey;
+
+    // Getters and setters to be added later.
 }
