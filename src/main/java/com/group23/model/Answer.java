@@ -35,4 +35,34 @@ public class Answer {
     private String answerText;
 
     // Getters and setters
+
+    public Long getId() {
+        return id;
+    }
+
+    // No setter for 'id' as it's auto-generated.
+
+    public Question getQuestion() {
+        return question;
+    }
+
+    public void setQuestion(Question question) {
+        this.question = question;
+    }
+
+    public Response getResponse() {
+        return response;
+    }
+
+    public void setResponse(Response response) {
+        this.response = response;
+    }
+
+    public String getAnswerText() {
+        return answerText;
+    }
+
+    public void setAnswerText(String answerText) {
+        this.answerText = answerText;
+    }
 }
