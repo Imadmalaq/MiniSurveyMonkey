@@ -1,5 +1,6 @@
 package com.group23.model;
 
+
 import jakarta.persistence.*;
 
 /**
