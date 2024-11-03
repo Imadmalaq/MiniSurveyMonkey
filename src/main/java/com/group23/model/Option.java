@@ -28,4 +28,26 @@ public class Option {
     private MultipleChoiceQuestion question;
 
     // Getters and setters
+
+    public Long getId() {
+        return id;
+    }
+
+    // Since 'id' is auto-generated, a setter is usually not needed.
+
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
+
+    public MultipleChoiceQuestion getQuestion() {
+        return question;
+    }
+
+    public void setQuestion(MultipleChoiceQuestion question) {
+        this.question = question;
+    }
 }

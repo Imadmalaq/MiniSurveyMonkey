@@ -1,6 +1,5 @@
 package com.group23.model;
 
-
 import jakarta.persistence.*;
 
 /**
@@ -36,14 +35,14 @@ public abstract class Question {
         return id;
     }
 
-    // Since id is auto-generated, you might not need a setter for it
+    // No setter for 'id' as it's auto-generated.
 
     public String getText() {
         return text;
     }
 
     public void setText(String text) {
-        this.text = text; // Add validation if necessary
+        this.text = text;
     }
 
     public Survey getSurvey() {

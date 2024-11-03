@@ -33,5 +33,43 @@ public class SurveyResult {
      */
     private Map<Question, Map<Option, Integer>> choiceResults;
 
-    // Methods to generate and retrieve results to be added later.
+    // Getters and setters
+
+    public Long getId() {
+        return id;
+    }
+
+    // No setter for 'id' if it's auto-generated.
+
+    public Survey getSurvey() {
+        return survey;
+    }
+
+    public void setSurvey(Survey survey) {
+        this.survey = survey;
+    }
+
+    public Map<Question, List<String>> getOpenEndedResults() {
+        return openEndedResults;
+    }
+
+    public void setOpenEndedResults(Map<Question, List<String>> openEndedResults) {
+        this.openEndedResults = openEndedResults;
+    }
+
+    public Map<Question, Map<Integer, Integer>> getNumericResults() {
+        return numericResults;
+    }
+
+    public void setNumericResults(Map<Question, Map<Integer, Integer>> numericResults) {
+        this.numericResults = numericResults;
+    }
+
+    public Map<Question, Map<Option, Integer>> getChoiceResults() {
+        return choiceResults;
+    }
+
+    public void setChoiceResults(Map<Question, Map<Option, Integer>> choiceResults) {
+        this.choiceResults = choiceResults;
+    }
 }
