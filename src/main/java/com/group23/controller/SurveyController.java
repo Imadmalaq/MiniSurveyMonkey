@@ -1,9 +1,13 @@
 package com.group23.controller;
 
 import com.group23.model.Survey;
+import com.group23.service.SurveyService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * Controller for managing surveys.
@@ -11,6 +15,13 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 @RequestMapping("/surveys")
 public class SurveyController {
+
+    private final SurveyService surveyService;
+
+    @Autowired
+    public SurveyController(SurveyService surveyService) {
+        this.surveyService = surveyService;
+    }
 
     /**
      * Displays a list of all surveys.
@@ -20,7 +31,8 @@ public class SurveyController {
      */
     @GetMapping
     public String listSurveys(Model model) {
-        // Method implementation goes here
+        List<Survey> surveys = surveyService.listAllSurveys();
+        model.addAttribute("surveys", surveys);
         return "survey/list";
     }
 
