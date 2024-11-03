@@ -1,15 +1,19 @@
 package com.group23.model;
 
+import jakarta.persistence.*;
 import java.util.List;
 
 /**
  * Represents a survey created by the surveyor.
  */
+@Entity
 public class Survey {
 
     /**
      * Unique identifier for the survey.
      */
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     /**
@@ -25,6 +29,7 @@ public class Survey {
     /**
      * List of questions in the survey.
      */
+    @OneToMany(mappedBy = "survey", cascade = CascadeType.ALL)
     private List<Question> questions;
 
     /**

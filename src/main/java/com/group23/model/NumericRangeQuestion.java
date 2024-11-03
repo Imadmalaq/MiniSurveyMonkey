@@ -1,8 +1,11 @@
 package com.group23.model;
 
+import jakarta.persistence.*;
+
 /**
  * Represents a question asking for a number within a specified range.
  */
+@Entity
 public class NumericRangeQuestion extends Question {
 
     /**
@@ -15,5 +18,5 @@ public class NumericRangeQuestion extends Question {
      */
     private int maxValue;
 
-    // Getters and setters to be added later.
+    // Getters and setters
 }
