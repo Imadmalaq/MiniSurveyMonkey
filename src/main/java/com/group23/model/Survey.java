@@ -37,5 +37,15 @@ public class Survey {
      */
     private boolean isOpen;
 
-    // Getters and setters to be added later.
+    // Getters and setters
+
+    public boolean getIsOpen() {
+        return isOpen;
+    }
+
+    public void setIsOpen(boolean isOpen) {
+        this.isOpen = isOpen;
+    }
+
+    // Other getters and setters can be added here
 }
