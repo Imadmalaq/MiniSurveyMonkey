@@ -30,4 +30,26 @@ public abstract class Question {
     private Survey survey;
 
     // Getters and setters
+
+    public Long getId() {
+        return id;
+    }
+
+    // Since id is auto-generated, you might not need a setter for it
+
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text; // Add validation if necessary
+    }
+
+    public Survey getSurvey() {
+        return survey;
+    }
+
+    public void setSurvey(Survey survey) {
+        this.survey = survey;
+    }
 }
