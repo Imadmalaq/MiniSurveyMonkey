@@ -16,7 +16,6 @@ public class HomeController {
      */
     @GetMapping("/")
     public String home() {
-        // Method implementation goes here
-        return "home/index";
+        return "home/index"; // This corresponds to templates/home/index.html
     }
 }
