@@ -44,7 +44,7 @@ public class SurveyController {
      */
     @GetMapping("/new")
     public String showCreateSurveyForm(Model model) {
-        // Method implementation goes here
+        model.addAttribute("survey", new Survey());
         return "survey/create";
     }
 
@@ -56,7 +56,8 @@ public class SurveyController {
      */
     @PostMapping
     public String createSurvey(@ModelAttribute Survey survey) {
-        // Method implementation goes here
+        survey.setIsOpen(true); // Set survey to open by default
+        surveyService.createSurvey(survey);
         return "redirect:/surveys";
     }
 
