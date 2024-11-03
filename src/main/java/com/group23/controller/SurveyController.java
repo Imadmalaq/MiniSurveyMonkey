@@ -70,7 +70,11 @@ public class SurveyController {
      */
     @GetMapping("/{id}")
     public String viewSurvey(@PathVariable Long id, Model model) {
-        // Method implementation goes here
+        Survey survey = surveyService.getSurveyById(id);
+        if (survey == null) {
+            return "redirect:/surveys"; // Redirect if survey not found
+        }
+        model.addAttribute("survey", survey);
         return "survey/view";
     }
 
@@ -82,7 +86,7 @@ public class SurveyController {
      */
     @PostMapping("/{id}/close")
     public String closeSurvey(@PathVariable Long id) {
-        // Method implementation goes here
+        surveyService.closeSurvey(id);
         return "redirect:/surveys/{id}";
     }
 }

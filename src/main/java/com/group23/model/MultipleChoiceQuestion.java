@@ -5,15 +5,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Represents a question where users choose from multiple options.
+ * Represents a multiple-choice question.
  */
 @Entity
 public class MultipleChoiceQuestion extends Question {
 
-    /**
-     * List of available options.
-     */
-    @OneToMany(mappedBy = "question", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Option> options = new ArrayList<>();
 
     // Getters and setters
@@ -24,17 +21,5 @@ public class MultipleChoiceQuestion extends Question {
 
     public void setOptions(List<Option> options) {
         this.options = options;
-    }
-
-    // Optional: Convenience methods to manage bidirectional relationships
-
-    public void addOption(Option option) {
-        options.add(option);
-        option.setQuestion(this);
-    }
-
-    public void removeOption(Option option) {
-        options.remove(option);
-        option.setQuestion(null);
     }
 }

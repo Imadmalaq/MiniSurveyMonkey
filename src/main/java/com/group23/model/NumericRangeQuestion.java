@@ -1,22 +1,31 @@
 package com.group23.model;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
 
 /**
- * Represents a question asking for a number within a specified range.
+ * Represents a numeric range question.
  */
 @Entity
 public class NumericRangeQuestion extends Question {
 
-    /**
-     * Minimum acceptable value.
-     */
-    private int minValue;
-
-    /**
-     * Maximum acceptable value.
-     */
-    private int maxValue;
+    private Integer minValue;
+    private Integer maxValue;
 
     // Getters and setters
+
+    public Integer getMinValue() {
+        return minValue;
+    }
+
+    public void setMinValue(Integer minValue) {
+        this.minValue = minValue;
+    }
+
+    public Integer getMaxValue() {
+        return maxValue;
+    }
+
+    public void setMaxValue(Integer maxValue) {
+        this.maxValue = maxValue;
+    }
 }

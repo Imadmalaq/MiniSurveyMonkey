@@ -2,11 +2,12 @@ package com.group23.repository;
 
 import com.group23.model.Question;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 /**
  * Repository interface for {@link Question} entities.
- * Supports inheritance for different question types.
  */
+@Repository
 public interface QuestionRepository extends JpaRepository<Question, Long> {
-    // Additional query methods can be defined here if needed.
+    // Additional query methods if needed
 }

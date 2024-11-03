@@ -3,51 +3,30 @@ package com.group23.model;
 import jakarta.persistence.*;
 
 /**
- * Represents an answer to a specific question in a survey.
+ * Represents an answer to a question in a survey response.
  */
 @Entity
 public class Answer {
 
-    /**
-     * Unique identifier for the answer.
-     */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    /**
-     * The question being answered.
-     */
     @ManyToOne
-    @JoinColumn(name = "question_id")
-    private Question question;
-
-    /**
-     * The response this answer belongs to.
-     */
-    @ManyToOne
-    @JoinColumn(name = "response_id")
     private Response response;
 
-    /**
-     * The text of the answer (could be text, number, or option ID).
-     */
-    private String answerText;
+    private Long questionId;
+
+    private String text; // For Open-Ended Questions
+
+    private Integer number; // For Numeric Range Questions
+
+    private Long selectedOptionId; // For Multiple Choice Questions
 
     // Getters and setters
 
     public Long getId() {
         return id;
-    }
-
-    // No setter for 'id' as it's auto-generated.
-
-    public Question getQuestion() {
-        return question;
-    }
-
-    public void setQuestion(Question question) {
-        this.question = question;
     }
 
     public Response getResponse() {
@@ -58,11 +37,35 @@ public class Answer {
         this.response = response;
     }
 
-    public String getAnswerText() {
-        return answerText;
+    public Long getQuestionId() {
+        return questionId;
     }
 
-    public void setAnswerText(String answerText) {
-        this.answerText = answerText;
+    public void setQuestionId(Long questionId) {
+        this.questionId = questionId;
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
+
+    public Integer getNumber() {
+        return number;
+    }
+
+    public void setNumber(Integer number) {
+        this.number = number;
+    }
+
+    public Long getSelectedOptionId() {
+        return selectedOptionId;
+    }
+
+    public void setSelectedOptionId(Long selectedOptionId) {
+        this.selectedOptionId = selectedOptionId;
     }
 }
